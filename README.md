@@ -1,4 +1,4 @@
-# Coy · Discover
+# Coy Discover
 
 A swipe-based "Discover" tab for Coy. Like in secret, match only when it is mutual.
 Built with Next.js (App Router) + API routes + a JSON file database. No external services.
@@ -13,6 +13,15 @@ npm run dev        # http://localhost:3000
 Open it on a phone-sized window (or your phone on the same Wi-Fi). On desktop use the buttons or the left/right arrow keys.
 
 **Demo tip:** 8 of the 32 profiles have already liked you (Aanya, Meera, Arjun, Sana, Aarav, Riya, Yash, Anika). Like any of them to see the "It's a match!" screen. When the deck is empty, tap "Replay demo" to reset.
+
+## Live demo
+
+**[https://coy-discover-one.vercel.app/](https://coy-discover-one.vercel.app/)**
+
+- Open it on your phone, or use a phone-sized window on desktop.
+- Drag a card right to like, left to pass. Desktop: use the buttons or the left/right arrow keys.
+- To see the "It's a match!" screen, like Aanya, Meera, Arjun, Sana, Aarav, Riya, Yash or Anika. They have already liked you.
+- The demo runs on Vercel, where file storage is temporary. Swipes can reset after the server sleeps. For fully persistent swipes, run it locally (steps below).
 
 ## What is in the app
 
@@ -67,11 +76,6 @@ Things that could leak who liked you, and how each is handled:
 
 Known limit: because "like" returns `match: true` only when mutual, a user who likes everyone would learn who liked them. That is inherent to any swipe app. A real version should rate-limit likes per day.
 
-## Deploying
+## Deployed Link
 
-- Vercel: works, but the server file system is temporary (`/tmp`), so data resets on cold starts. For a persistent deploy use Railway/Render/Fly, or swap `lib/db.js` for SQLite/Postgres. Only `lib/db.js` needs to change.
-- Set `DISABLE_RESET=1` to turn off the demo reset endpoint.
-
-## Part A
-
-See `docs/PART_A_FEATURES.md`.
+- Vercel: https://coy-discover-one.vercel.app/
